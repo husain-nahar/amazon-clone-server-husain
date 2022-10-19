@@ -1,5 +1,5 @@
 // PORT ADDRESS
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // URL ADDRESS TO MONGO-DB
 const DB = "mongodb+srv://husainahar90:52MyWay53@cluster0.7oncq6o.mongodb.net/?retryWrites=true&w=majority";
@@ -30,7 +30,7 @@ mongoose.connect(DB).then(() => {
 });
 
 // - to local server
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     // console.log("connected to the port" + PORT);
     console.log(`connected to the port ${PORT}`);
     });
